@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Hóspedes</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="inicio.html">Inicio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="cadastro2.html">Cadastro2</a>
+                <a href="evento.html">Evento</a>
+                <a href="buffet.html">Buffet</a>
+                <a href="auditorio.html">Auditório</a>
+                <a href="restaurante.html">Reserva de Restaurante</a>
+                <a href="posto.html">Posto</a>
+                <a href="manutencao.html">Manutenção</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+
+        let total = 0
+        let gratuidade = 0
+        let meia = 0
+
+        let diaria = parseFloat(prompt("Qual o valor da diaria?"))
+
+        while (true) {
+            let nome = prompt("Qual o nome do hóspede?")
+            if (nome.toUpperCase() === "PARE") break
+
+            let idade = parseInt(prompt("Qual a idade do hóspede?"))
+            if (idade < 0) {
+                alert("Idade inválida! Digite novamente.")
+                continue
+            }
+            else if (idade < 6) {
+                alert(nome + " possui gratuidade.")
+                gratuidade++
+            } else if (idade > 60) {
+                alert(nome + " paga meia.")
+                meia++
+                total += diaria / 2
+            } else {
+                total += diaria
+            }
+        }
+
+        document.write("O valor total é: R$" + total.toFixed(2) + ", " + gratuidade + " gratuidade(s) e " + meia + " meia(s).")
+    </script>
+
+</body>
+</html>

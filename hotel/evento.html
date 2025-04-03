@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="inicio.html">Inicio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="cadastro2.html">Cadastro2</a>
+                <a href="evento.html">Evento</a>
+                <a href="buffet.html">Buffet</a>
+                <a href="auditorio.html">Auditório</a>
+                <a href="restaurante.html">Reserva de Restaurante</a>
+                <a href="posto.html">Posto</a>
+                <a href="manutencao.html">Manutenção</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+
+        let duracao = parseInt(prompt("Qual a duração do evento?"))
+
+        let garcom = parseInt(prompt("Quantos garçons serão necessários?"))
+
+        let hora = garcom * 10.50
+
+        let garcom_hora = hora * duracao
+
+        alert("Custo total: R$" + garcom_hora)
+
+        let confirmar
+
+        do {
+            confirmar = prompt("Gostaria de efetuar a reserva?S/N").toUpperCase()
+
+        switch (confirmar) {
+            case "S":
+                alert("Reserva efetuada com sucesso!")
+                break
+            case "N":
+                alert("Reserva não efetuada")
+                break
+            default:
+            alert("Opção inválida! Tente novamente.")
+        }
+    } while (confirmar !== "N" && confirmar !== "S")
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="inicio.html">Inicio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="cadastro2.html">Cadastro2</a>
+                <a href="evento.html">Evento</a>
+                <a href="buffet.html">Buffet</a>
+                <a href="auditorio.html">Auditório</a>
+                <a href="restaurante.html">Reserva de Restaurante</a>
+                <a href="posto.html">Posto</a>
+                <a href="manutencao.html">Manutenção</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+
+        let dia = prompt("Qual o dia do seu evento?")
+        if (dia == "sabado" || dia =="domingo") {
+            let hora = prompt("Qual a hora do seu evento?")
+            if (hora < 7 || hora > 15) {
+                alert("Restaurante indisponível nesse horario")
+            } else {
+              let loja = prompt("Qual o nome da empresa?")
+                alert("Restaurante reservado para " + loja +". " + dia + " às " + hora + "h")
+            } 
+        }
+
+         else if (dia == "segunda" || dia == "terca" || dia == "quarta" || dia == "quinta" || dia == "sexta") {
+                let hora = prompt("Qual a hora do seu evento?")
+              if (hora < 7 || hora > 23) {
+                alert("Restaurante indisponível")
+            } else {
+                let loja = prompt("Qual o nome da empresa?")
+                alert("Restaurante reservado para " + loja +" . " + dia + " às " + hora + " h")
+            }
+        }
+    </script>
+    
+</body>
+</html>

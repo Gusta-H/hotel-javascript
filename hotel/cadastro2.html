@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="inicio.html">Inicio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="cadastro2.html">Cadastro2</a>
+                <a href="evento.html">Evento</a>
+                <a href="buffet.html">Buffet</a>
+                <a href="auditorio.html">Auditório</a>
+                <a href="restaurante.html">Reserva de Restaurante</a>
+                <a href="posto.html">Posto</a>
+                <a href="manutencao.html">Manutenção</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        const hospedes = []
+        const maxHospedes = 15
+
+function menu() {
+    let opcao;
+    do {
+        opcao = prompt("Selecione uma opção:\n1. Cadastrar\n2. Pesquisar\n3. Sair");
+        
+        switch (opcao) {
+            case "1":
+                cadastrarHospede();
+                break;
+            case "2":
+                pesquisarHospede();
+                break;
+            case "3":
+                alert("Saindo do programa...");
+                break;
+            default:
+                alert("Opção inválida! Tente novamente.");
+        }
+    } while (opcao !== "3");
+}
+
+function cadastrarHospede() {
+    if (hospedes.length >= maxHospedes) {
+        alert("Máximo de cadastros atingido");
+        return;
+    }
+    
+    const nome = prompt("Qual o nome do hóspede?");
+    if (nome) {
+        hospedes.push(nome);
+        alert("Hóspede " + nome + " foi cadastrada(o) com sucesso!");
+    } else {
+        alert("Nome inválido! Tente novamente.");
+    }
+}
+
+function pesquisarHospede() {
+    const nome = prompt("Qual o nome do hóspede?");
+    if (hospedes.includes(nome)) {
+        alert("Hóspede " + nome +  " foi encontrada(o)!");
+    } else {
+        alert("Hóspede " + nome + " não foi encontrada(o)!");
+    }
+}
+
+menu();
+
+    </script>
+    
+</body>
+</html>

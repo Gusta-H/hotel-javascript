@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="inicio.html">Inicio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="cadastro2.html">Cadastro2</a>
+                <a href="evento.html">Evento</a>
+                <a href="buffet.html">Buffet</a>
+                <a href="auditorio.html">Auditório</a>
+                <a href="restaurante.html">Reserva de Restaurante</a>
+                <a href="posto.html">Posto</a>
+                <a href="manutencao.html">Manutenção</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+
+        let cafe = 0.2
+        let agua = 0.5
+        let salgado = 7
+
+        let convidados = parseInt(prompt("Qual o número de convidados para o evento?"))
+        if (convidados > 360) {
+            alert("Quantidade de convidados superior à capacidade máxima.")
+        } else if (convidados <= 0) {
+            alert("Quantidade de convidados invalida, digite um valor maior que 0.")
+        } else {
+            alert(`O evento precisará de ${convidados*cafe} litros de café, ${convidados*agua} litros de água, e ${convidados*salgado} salgados. O custo total do evento será de R$ ${(convidados*0.8) + (convidados*0.4) + (convidados*0.34)}`)
+        }
+            
+        let reservar = prompt("Gostaria de efetuar a reserva? S/N").toUpperCase()
+            if (reservar == "S") {
+                alert("Reserva efetuada com sucesso")
+            } else if (reservar == "N") {
+                alert("Reserva não efetuada")
+            } else {
+                alert("Digite uma opção valida! (S para sim e N para não)")
+            }
+
+    </script>
+    
+</body>
+</html>

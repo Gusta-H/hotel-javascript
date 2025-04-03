@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                <a href="inicio.html">Inicio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="cadastro2.html">Cadastro2</a>
+                <a href="evento.html">Evento</a>
+                <a href="buffet.html">Buffet</a>
+                <a href="auditorio.html">Auditório</a>
+                <a href="restaurante.html">Reserva de Restaurante</a>
+                <a href="posto.html">Posto</a>
+                <a href="manutencao.html">Manutenção</a>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+
+        let cadeirasExtras = 0
+
+        let convidados = parseInt(prompt("Qual o número de convidados para o seu evento?"))
+
+        if (convidados > 350) {
+            alert("Quantidade de convidados superior à capacidade máxima.")
+        } else { 
+            if (convidados > 220 && convidados < 350) {
+            alert("Use o auditório Colorado.")
+        }
+         else if (convidados <= 150) {
+            alert(`Use o auditório Laranja.`)
+        } else if (convidados <= 220) {
+            alert(`Use o auditório Laranja (inclua mais ${convidados - 150} cadeira.)`)
+        }
+
+        do {
+            confirmar = prompt("Gostaria de efetuar a reserva?S/N").toUpperCase()
+
+        switch (confirmar) {
+            case "S":
+                alert("Reserva efetuada com sucesso!")
+                break
+            case "N":
+                alert("Reserva não efetuada")
+                break
+            default:
+            alert("Opção inválida! Tente novamente.")
+        }
+    } while (confirmar !== "N" && confirmar !== "S")
+}
+    </script>
+</body>
+</html>
